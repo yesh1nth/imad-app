@@ -7,8 +7,17 @@ app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
+  
 });
-
+app.get('/article-one', function (req, res) {
+  res.send('this page for article one is yet to  be served here');
+});
+app.get('/article-two', function (req, res) {
+  res.send('this page for article two is yet to  be served here');
+});
+app.get('/article-three', function (req, res) {
+  res.send('this page for article three is yet to  be served here');
+});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
