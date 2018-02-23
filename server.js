@@ -9,25 +9,40 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
   
 });
- var ArticleOne = {
-    title: 'article-one| yeshwanth digavinti',
+var articles = {
+
+ 'article-one': {
+   title: 'article-one| yeshwanth digavinti',
     heading :'article-one',
-    date:  'Feb 23 2018',
+    date:  'Feb 14 2018',
     content: `'<div>
         
-             <p>
-                this is content for article one .this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one .
-             </p>
-              <p>
-                this is content for article one .this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one .
-             </p>
-              <p>
-                this is content for article one .this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one this is content for article one .
-            </p>
+             content for artilce 1
              </div>'
              `
+},
+  'article-two': {title: 'article-two| yeshwanth digavinti',
+    heading :'article-two',
+    date:  'Feb 24 2018',
+    content: `'<div>
+        
+             content for artilce 2
+             </div>'
+             `
+     
+ },
+  'article-three':{
+     title: 'article-three| yeshwanth digavinti',
+    heading :'article-three',
+    date:  'Feb 25 2018',
+    content: `'<div>
+        
+             content for 3
+             </div>'
+             `
+ },
 };
-function CreateTemplate(data){
+function CreateTemplate (data) {
 var title = data.title;
 var heading = data.heading;
 var date = data.date;
@@ -67,8 +82,8 @@ var HtmlTemplate =
 return HtmlTemplate;
 }
 
-app.get('/article-one', function (req, res) {
-  res.send(CreateTempalte(ArticleOne));
+app.get('/:articleName', function (req, res) {
+  res.send(CreateTempalte(articles[articleName]));
 });
 app.get('/article-two', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
