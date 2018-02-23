@@ -24,10 +24,10 @@ var articles = {
   'article-two': {title: 'article-two| yeshwanth digavinti',
     heading :'article-two',
     date:  'Feb 24 2018',
-    content: `'<div>
+    content: `<div>
         
              content for artilce 2
-             </div>'
+             </div>
              `
      
  },
