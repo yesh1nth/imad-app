@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'ui', 'index.html'));
   
 });
- var articleone = {
+ var ArticleOne = {
     title: 'article-one| yeshwanth digavinti',
     heading :'article-one',
     date:  'Feb 23 2018',
@@ -27,12 +27,12 @@ app.get('/', function (req, res) {
              </div>'
              `
 };
-function createtemplate(data){
+function CreateTemplate(data){
 var title = data.title;
 var heading = data.heading;
 var date = data.date;
 var content = data.content;
-var htmltemplate = 
+var HtmlTemplate = 
     `
     <html>
     <head>
@@ -64,11 +64,11 @@ var htmltemplate =
         </div>
     </body>
 </html>`;
-return htmltemplate;
+return HtmlTemplate;
 }
 
 app.get('/article-one', function (req, res) {
-  res.send(createtempalte(articleone));
+  res.send(CreateTempalte(ArticleOne));
 });
 app.get('/article-two', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
